@@ -29,11 +29,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
-    ViliWifiOverlay
+    VeuxWifiOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
 	$(LOCAL_PATH)
 
 # Call the proprietary setup
-$(call inherit-product, vendor/xiaomi/vili/vili-vendor.mk)
+$(call inherit-product, vendor/xiaomi/veux/veux-vendor.mk)

@@ -33,7 +33,7 @@ fi
 set -e
 
 # Required!
-export DEVICE=vili
+export DEVICE=veux
 export DEVICE_COMMON=sm8350-common
 export VENDOR=xiaomi
 

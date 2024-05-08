@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/vili
+DEVICE_PATH := device/xiaomi/veux
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -13,23 +13,22 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 include device/xiaomi/sm8350-common/BoardConfigCommon.mk
 
 # Board
-TARGET_BOOTLOADER_BOARD_NAME := vili
+TARGET_BOOTLOADER_BOARD_NAME := veux
 
 # Camera
 TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
 
 # HIDL
-ODM_MANIFEST_SKUS := \
-    vili \
-    vilijp
+ODM_MANIFEST_SKUS += \
+    sn100
 
 NFC_ESE_MANIFEST := $(DEVICE_PATH)/hidl/nfc_ese.xml
 
-ODM_MANIFEST_VILI_FILES := $(NFC_ESE_MANIFEST)
-ODM_MANIFEST_VILIJP_FILES := $(NFC_ESE_MANIFEST)
+ODM_MANIFEST_SN100_FILES := \
+    $(DEVICE_PATH)/manifest_ese.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/vili_QGKI.config
+TARGET_KERNEL_CONFIG := veux_defconfig
 
 # Kernel modules
 BOOT_KERNEL_MODULES := \
@@ -41,7 +40,7 @@ BOOT_KERNEL_MODULES := \
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
 
 # OTA Assert
-TARGET_OTA_ASSERT_DEVICE := vili
+TARGET_OTA_ASSERT_DEVICE := veux|peux
 
 # Partitions
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
@@ -51,4 +50,4 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 113254576128
 SOONG_CONFIG_xiaomiSm8350Vars_vibrator_use_effect_stream := true
 
 # Inherit from proprietary files
-include vendor/xiaomi/vili/BoardConfigVendor.mk
+include vendor/xiaomi/veux/BoardConfigVendor.mk

@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_vili.mk
+	$(LOCAL_DIR)/lineage_veux.mk
 
 COMMON_LUNCH_CHOICES := \
-	lineage_vili-user \
-	lineage_vili-userdebug \
-	lineage_vili-eng
+	lineage_veux-user \
+	lineage_veux-userdebug \
+	lineage_veux-eng
